@@ -1,0 +1,16 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Modifier Promotion{% endblock %}
+
+{% block content %}
+
+    {{ include('promotion/_form.html.twig', {'button_label': 'Update'}) }}
+    {{form_widget(form)}}
+    <button type ="submit" class="btn btn-success">Modifiier</button>
+    {{  form_end(form) }}
+
+
+    <a href="{{ path('promotion_index') }}">back to list</a>
+
+    {{ include('promotion/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+                        <h1>Guide</h1>
+
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <th>Id</th>
+                                <td>{{ guide.id }}</td>
+                            </tr>
+                            <tr>
+                                <th>Idguide</th>
+                                <td>{{ guide.idguide }}</td>
+                            </tr>
+                            <tr>
+                                <th>Nom</th>
+                                <td>{{ guide.nom }}</td>
+                            </tr>
+                            <tr>
+                                <th>Prenom</th>
+                                <td>{{ guide.prenom }}</td>
+                            </tr>
+                            <tr>
+                                <th>Cin</th>
+                                <td>{{ guide.cin }}</td>
+                            </tr>
+                            <tr>
+                                <th>Numtel</th>
+                                <td>{{ guide.numtel }}</td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td>{{ guide.email }}</td>
+                            </tr>
+                            <tr>
+                                <th>Img</th>
+                                <td><a><img alt="guideImg" src="{{asset('img/' ~ guide.img )}}" width="200px" height="200px" align=""></a></td>
+
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <a href="{{ path('guide_index') }}">back to list</a>
+
+                        <a href="{{ path('guide_edit', {'id': guide.id}) }}">edit</a>
+
+                        {{ include('guide/_delete_form.html.twig') }}
+                    </div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

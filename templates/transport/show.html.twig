@@ -1,0 +1,64 @@
+
+{% extends 'admin.html.twig' %}
+{% block body %}
+
+                    <h1>Transport</h1>
+
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ transport.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Idguide</th>
+                            <td>{{ transport.idguide }}</td>
+                        </tr>
+                        <tr>
+                            <th>Type</th>
+                            <td>{{ transport.type }}</td>
+                        </tr>
+                        <tr>
+                            <th>Depart</th>
+                            <td>{{ transport.depart }}</td>
+                        </tr>
+                        <tr>
+                            <th>Destination</th>
+                            <td>{{ transport.destination }}</td>
+                        </tr>
+                        <tr>
+                            <th>Prix</th>
+                            <td>{{ transport.prix }}</td>
+                        </tr>
+                        <tr>
+                            <th>Pays</th>
+                            <td>{{ transport.pays }}</td>
+                        </tr>
+                        <tr>
+                            <th>Ville</th>
+                            <td>{{ transport.ville }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <a class="btn btn-secondary" href="{{ path('transport_index') }}">back to list</a>
+
+                    <a class="btn btn-secondary" href="{{ path('transport_edit', {'id': transport.id}) }}">edit</a>
+
+                    {{ include('transport/_delete_form.html.twig') }}
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}New Promotion{% endblock %}
+
+{% block content %}
+    <h1>Create new Promotion</h1>
+
+    {{ include('promotion/_form.html.twig') }}
+
+    <a href="{{ path('promotion_index') }}" class="btn btn-primary btn">Retour</a>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Promotion index{% endblock %}
+
+{% block content %}
+    <h1>Promotion index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Idvol</th>
+                <th>Idhotel</th>
+                <th>Idtransport</th>
+                <th>Date_d</th>
+                <th>Date_f</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for promotion in promotions %}
+            <tr>
+                <td>{{ promotion.id }}</td>
+                <td>{{ promotion.idvol.id }}</td>
+                <td>{{ promotion.Idhotel.id }}</td>
+                <td>{{ promotion.Idtransport.id }}</td>
+                <td>{{ promotion.getDateD() ? promotion.getDateD()|date('Y-m-d') : '' }}</td>
+                <td>{{ promotion.getDateF()? promotion.getDateF()|date('Y-m-d') : '' }}</td>
+                <td>{{ promotion.prix }}</td>
+                <td>
+                    <a href="{{ path('promotion_show', {'id': promotion.id}) }}" class="btn btn-primary btn">Afficher</a>
+                    <a href="{{ path('promotion_edit', {'id': promotion.id}) }}" class="btn btn-primary btn">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('promotion_new') }}" class="btn btn-primary btn">Créer</a>
+{% endblock %}

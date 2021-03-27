@@ -1,0 +1,48 @@
+{% extends 'admin.html.twig' %}
+{% block title %}Transport{% endblock %}
+{% block body %}
+
+
+
+    <h1>Transport index</h1>
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Idguide</th>
+                            <th>Type</th>
+                            <th>Depart</th>
+                            <th>Destination</th>
+                            <th>Prix</th>
+                            <th>Pays</th>
+                            <th>Ville</th>
+                            <th>actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for transport in transports %}
+                            <tr>
+                                <td>{{ transport.id }}</td>
+                                <td>{{ transport.idguide }}</td>
+                                <td>{{ transport.type }}</td>
+                                <td>{{ transport.depart }}</td>
+                                <td>{{ transport.destination }}</td>
+                                <td>{{ transport.prix }}</td>
+                                <td>{{ transport.pays }}</td>
+                                <td>{{ transport.ville }}</td>
+                                <td>
+                                    <a class="btn btn-secondary" href="{{ path('transport_show', {'id': transport.id}) }}">afficher</a>
+                                    <a class="btn btn-secondary" href="{{ path('transport_edit', {'id': transport.id}) }}">modifier</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="9">aucune donnée trouvée </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <a href="{{ path('transport_new') }}">créer nouveau</a>
+{% endblock %}
