@@ -19,6 +19,16 @@ class CommentaireRepository extends ServiceEntityRepository
         parent::__construct($registry, Commentaire::class);
     }
 
+    public function countCommentGroupByEvent()
+    {
+        return $this->createQueryBuilder('p')
+            ->select('count(p.id) as nombre','IDENTITY(p.id_event) as type')
+            ->groupBy('p.id_event')
+            ->getQuery()
+            ->getResult() ;
+
+    }
+
     // /**
     //  * @return Commentaire[] Returns an array of Commentaire objects
     //  */

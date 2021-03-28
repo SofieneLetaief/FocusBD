@@ -19,8 +19,10 @@
             </tr>
         </thead>
         <tbody>
+        {{ dump(promotions) }}
         {% for promotion in promotions %}
             <tr>
+
                 <td>{{ promotion.id }}</td>
                 <td>{{ promotion.idvol.id }}</td>
                 <td>{{ promotion.Idhotel.id }}</td>
@@ -42,4 +44,5 @@
     </table>
 
     <a href="{{ path('promotion_new') }}" class="btn btn-primary btn">Créer</a>
+
 {% endblock %}

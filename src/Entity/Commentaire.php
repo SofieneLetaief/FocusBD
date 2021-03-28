@@ -26,7 +26,7 @@ class Commentaire
      * @ORM\ManyToOne(targetEntity=Evennement::class, inversedBy="commentaires" ,cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="id_event", referencedColumnName="id")
      */
-    private $id_event;
+    public $id_event;
 
     public function getId(): ?int
     {

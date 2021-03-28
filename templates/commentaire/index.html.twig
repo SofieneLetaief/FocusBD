@@ -10,14 +10,17 @@
             <tr>
                 <th>Id</th>
                 <th>Contenu</th>
+                <th>id_event</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
+
         {% for commentaire in commentaires %}
             <tr>
                 <td>{{ commentaire.id }}</td>
                 <td>{{ commentaire.contenu }}</td>
+                <td>{{ commentaire.id_event.id }}</td>
                 <td>
                     <a href="{{ path('commentaire_show', {'id': commentaire.id}) }}" class="btn btn-primary btn">Afficher</a>
                     <a href="{{ path('commentaire_edit', {'id': commentaire.id}) }}" class="btn btn-primary btn">Modifier</a>
@@ -32,4 +35,59 @@
     </table>
 
     <a href="{{ path('commentaire_new') }}" class="btn btn-primary btn">Créer</a>
+    <br>
+    <br>
+
+        <h3><i class="fa fa-angle-right"></i> Morris Charts</h3>
+        <!-- page start-->
+        <div id="morris">
+            <div class="row mt">
+
+<div class="col-lg-8">
+    <div class="content-panel">
+        <h4><i class="fa fa-angle-right"></i> Chart Example 2</h4>
+        <div class="panel-body">
+            <div id="hero-bar" class="graph"></div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+
+
+
+
+{% endblock %}
+{% block js %}
+    {{ parent() }}
+
+    <script>
+
+        Morris.Bar({
+            element: 'hero-bar',
+            data: [
+                {% for row in countTypes %}
+                {
+                    device: "idEvent "+"{{ row.type }}",
+                    geekbench: "{{ row.nombre }}"
+                },
+
+
+                {% endfor %}
+            ],
+            xkey: 'device',
+            ykeys: ['geekbench'],
+            labels: ['Nombre Commenatire'],
+            barRatio: 0.4,
+            xLabelAngle: 0,
+            hideHover: 'auto',
+            barColors: ['#ac92ec']
+        });
+
+    </script>
+
+
+
+
+
 {% endblock %}

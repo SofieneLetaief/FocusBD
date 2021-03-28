@@ -22,6 +22,7 @@ class CommentaireController extends AbstractController
     {
         return $this->render('commentaire/index.html.twig', [
             'commentaires' => $commentaireRepository->findAll(),
+             'countTypes'=>$commentaireRepository->countCommentGroupByEvent(),
         ]);
     }
 
