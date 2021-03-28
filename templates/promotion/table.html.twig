@@ -27,76 +27,45 @@
     </style>
 </head>
 <body>
-<h1> Liste Publicité</h1>
-{#<table class="table product-overview" id="myTable">#}
-{#    <thead>#}
-{#    <tr>#}
-{#        <th>Id</th>#}
-{#        <th>Titre_pub</th>#}
-{#        <th>Description_pub</th>#}
+<h1> Liste Promotion</h1>
+<table class="table product-overview" id="myTable">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Idvol</th>
+        <th>Idhotel</th>
+        <th>Idtransport</th>
+        <th>Date_d</th>
+        <th>Date_f</th>
+        <th>Prix</th>
 
 
-{#    </tr>#}
-{#    </thead>#}
-{#    <tbody>#}
-{#    {% for publicite in publicites %}#}
-{#        <tr>#}
-{#            <td>{{ publicite.id }}</td>#}
-{#            <td>{{ publicite.titrePub }}</td>#}
-{#            <td>{{ publicite.descriptionPub }}</td>#}
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for promotion in promotions %}
+        <tr>
+
+            <td>{{ promotion.id }}</td>
+            <td>{{ promotion.idvol.id }}</td>
+            <td>{{ promotion.Idhotel.id }}</td>
+            <td>{{ promotion.Idtransport.id }}</td>
+            <td>{{ promotion.getDateD() ? promotion.getDateD()|date('Y-m-d') : '' }}</td>
+            <td>{{ promotion.getDateF()? promotion.getDateF()|date('Y-m-d') : '' }}</td>
+            <td>{{ promotion.prix }}</td>
+
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="5">Pas de Promotion !</td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
 
 
-{#        </tr>#}
-{#    {% else %}#}
-{#        <tr>#}
-{#            <td colspan="5">Pas de publicité !</td>#}
-{#        </tr>#}
-{#    {% endfor %}#}
-
-{#    </tbody>#}
-{#</table>#}
-
-
-<canvas id="myChart" width="400" height="400"></canvas>
-<script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-</script>
 
 
 </body>

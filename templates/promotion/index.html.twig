@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-        {{ dump(promotions) }}
+
         {% for promotion in promotions %}
             <tr>
 
@@ -44,5 +44,5 @@
     </table>
 
     <a href="{{ path('promotion_new') }}" class="btn btn-primary btn">Créer</a>
-
+    <a href="{{ path('generatePdf') }}" class="btn btn-success btn">Generate Pdf </a>
 {% endblock %}

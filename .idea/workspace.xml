@@ -119,6 +119,10 @@
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
     </include_path>
   </component>
   <component name="ProjectId" id="1p1SkV0uOK85ZzP3jbpraLGg40s" />
@@ -131,7 +135,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vendor" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -141,6 +145,7 @@
       <recent name="C:\wamp64\www\Focus-dev\templates" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\FocusBD\vendor" />
       <recent name="C:\wamp64\www\Focus-dev\public" />
     </key>
   </component>
@@ -188,7 +193,7 @@
       <workItem from="1614733835427" duration="149000" />
       <workItem from="1614790049686" duration="7342000" />
       <workItem from="1616802211354" duration="1230000" />
-      <workItem from="1616804061546" duration="12094000" />
+      <workItem from="1616804061546" duration="13098000" />
     </task>
     <servers />
   </component>
@@ -204,6 +209,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="454" y="102" key="#Docker/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1616803158856" />
+    <state x="413" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616899313003">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1616899313003" />
     <state x="407" y="243" key="ComposerCompositePathDialog" timestamp="1616804420386">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -228,10 +237,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="96" width="607" height="536" key="find.popup/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1616897882085" />
-    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1616802859972">
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1616899543884">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1616802859972" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1616899543884" />
     <state x="346" y="49" key="search.everywhere.popup" timestamp="1616895796171">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

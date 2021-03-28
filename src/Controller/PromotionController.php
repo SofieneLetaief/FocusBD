@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Promotion;
 use App\Form\PromotionType;
 use App\Repository\PromotionRepository;
+use Dompdf\Dompdf;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,13 +27,30 @@ class PromotionController extends AbstractController
     }
 
     /**
-     * @Route("/table", name="promotionre", methods={"GET"})
+     * @Route("/generatePdf", name="generatePdf", methods={"GET"})
      */
-    public function table(PromotionRepository $promotionRepository): Response
+    public function generatePdf(PromotionRepository $promotionRepository): Response
     {
-        return $this->render('promotion/table.html.twig', [
+
+        // instantiate and use the dompdf class
+        $dompdf = new Dompdf();
+        $test = $this->renderView('promotion/table.html.twig', [
             'promotions' => $promotionRepository->findAll(),
         ]);
+        $dompdf->loadHtml($test);
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream();
+
+
+
+        return  $test;
     }
 
     /**
